@@ -31,8 +31,8 @@ def print_banner():
     banner = f"""
 {Colors.CYAN}{Colors.BOLD}
 ╔═══════════════════════════════════════════════════════════════╗
-║                HTTP 403 Bypass Testing Tool                  ║
-║                     Para CTFs y Testing Ético                ║
+║                HTTP 403 Bypass Testing Tool                   ║
+║                     Para CTFs y Testing Ético                 ║
 ╚═══════════════════════════════════════════════════════════════╝
 {Colors.END}
     """
@@ -51,7 +51,7 @@ def test_request(url, method='GET', headers=None, data=None, timeout=10):
             data=data,
             timeout=timeout,
             allow_redirects=False,
-            verify=False
+            verify=True
         )
         return response.status_code, len(response.content), response.headers.get('Content-Type', '')
     except requests.exceptions.RequestException as e:
