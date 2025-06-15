@@ -1,1 +1,5 @@
-
+requests
+colorama
+tqdm
+urllib3
+requests[socks]
